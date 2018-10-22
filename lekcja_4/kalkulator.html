@@ -1,22 +1,22 @@
-<!document html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Kalkulator</title>
-    
+
     <style>
-      
+
       *{
         padding: 0px;
         margin: 0px;
       }
       body{
-        background: aqua;
+        background: grey;
       }
       #content{
         width: 200px;
         padding: 20px;
-        background: #009dff;
+        background: lightgrey;
         margin: 40px auto;
         text-align: center;
       }
@@ -24,7 +24,7 @@
         width: 160px;
         height: 30px;
         vertical-align: middle;
-        background: #ffff7c;
+        background: white;
         text-align: right;
       }
       .btn{
@@ -35,7 +35,7 @@
         margin-bottom: 3px;
         background: white;
         border: none;
-        
+
       }
       .btn:hover{
         background: #ffff9f;
@@ -52,11 +52,11 @@
         background:#ff5e5e;
       }
       .btn-oper:hover{
-       
-        
+
+
         background: #ff5e5e;
         border: solid #ff1717 2px;
-      
+
       }
       #btn-ce{
         width: 48px;
@@ -82,7 +82,7 @@
         border: none;
         background:#ff5e5e;
       }
-      
+
       #btn-c:hover{
         background: #ff5e5e;
         border: solid #ff1717 2px;
@@ -105,7 +105,7 @@
   </head>
   <body>
     <div id="content">
-     
+
       <form id="calc">
       <caption>Kalkulator</caption>
       <input id="wyswietl" type="text" name="wynik" ><br>
@@ -113,17 +113,17 @@
       <button id="btn-ce" type="button">ce</button>
       <button id="btn-c" type="button">c</button>
       <button id="btn-rown" type="button">=</button><br>
-      
+
       <button id="1" class="btn" type="button" value="1">1</button>
       <button id="2" class="btn" type="button" value="2">2</button>
       <button id="3" class="btn" type="button" value="3">3</button>
         <button id="plus" class="btn-oper" type="button">+</button><br>
-        
+
       <button id="4" class="btn" type="button" value="4">4</button>
       <button id="5" class="btn" type="button" value="5">5</button>
       <button id="6" class="btn" type="button" value="6">6</button>
         <button id="minus" class="btn-oper" type="button">-</button><br>
-        
+
       <button id="7" class="btn" type="button" value="7">7</button>
       <button id="8" class="btn" type="button" value="8">8</button>
       <button id="9" class="btn" type="button" value="9">9</button>
@@ -131,11 +131,11 @@
         <button id="arrow" class="btn" type="button">&larr;</button>
         <button id="0" class="btn" type="button" value="0">0</button>
         <button class="btn" type="button" value=".">.</button>
-        
+
         <button id="mnoz" class="btn-oper" type="button">*</button>
     </form>
     <script src="kalk.js">
-    
+
     </script>
     </div>
   </body>
