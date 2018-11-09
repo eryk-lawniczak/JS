@@ -1,0 +1,63 @@
+body {
+    text-align: center;
+    background-color: burlywood;
+}
+
+* {
+    user-select: none;
+    transition: all 0.5 ease;
+}
+
+#nowa_gra {
+    display: inline-block;
+    line-height: 35px;
+}
+
+#nowa_gra [type=button] {
+    width: 100%;
+}
+
+img {
+    height: 230px;
+}
+
+#gra {
+    display: none;
+}
+
+#gra td {
+    min-width: 100px;
+    font-size: 64px;
+    border-style: solid;
+    border-width: 6px;
+    border-color: #B07971;
+}
+
+td {
+    width: 150px;
+    height: 150px;
+}
+
+.plansza td:hover {
+    background-color: #785C4D;
+    transition-duration: 300ms;
+}
+
+.fg-kolko {
+    text-align: center;
+    font-size: 25px;
+    color: #1EAFFD;
+    background-color: burlywood !important;
+}
+
+.fg-krzyzyk {
+    text-align: center;
+    font-size: 25px;
+    color: #FF2200;
+    background-color: burlywood !important;
+}
+
+.podkreslenie {
+    text-decoration: underline;
+    font-weight: bold;
+}

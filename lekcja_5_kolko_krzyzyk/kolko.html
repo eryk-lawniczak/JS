@@ -1,0 +1,39 @@
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="kolko.css" />
+</head>
+
+<body>
+    <img src="kolko.gif" alt="logo" id="logo">
+    <hr>
+    <div id="nowa_gra">
+        <input type="text" id="gracz_1" class="rounded" placeholder="Imię gracza 1"><br>
+        <input type="text" id="gracz_2" class="rounded" placeholder="Imię gracza 2"><br><br>
+        <input class="btn btn-outline-primary" type="button" value="NOWA GRA" />
+    </div>
+    <div id="gra">
+        <div id="ruch"></div>
+            <table border="1" class="plansza">
+                <tr>
+                    <td data-i="0" data-j="0"></td>
+                    <td data-i="0" data-j="1"></td>
+                    <td data-i="0" data-j="2"></td>
+                </tr>
+                <tr>
+                    <td data-i="1" data-j="0"></td>
+                    <td data-i="1" data-j="1"></td>
+                    <td data-i="1" data-j="2"></td>
+                </tr>
+                <tr>
+                    <td data-i="2" data-j="0"></td>
+                    <td data-i="2" data-j="1"></td>
+                    <td data-i="2" data-j="2"></td>
+                </tr>
+            </table>
+    </div>
+    <script src="kolko.js">
+    </script>
+</body>
+</html>
