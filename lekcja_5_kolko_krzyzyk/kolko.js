@@ -1,6 +1,8 @@
 var gracz_1, gracz_2;
 var czyRKrz = true;
 var plansza = [[], [], []];
+var czyZakonczonaGra = false;
+var remis = false;
 
 function wczytajplansze() {
     var pola = document.querySelectorAll('.plansza td');
@@ -75,8 +77,8 @@ function czyKoniecGry(pos_i, pos_j){
     var czyRemis = true;
     for (var i = 0; i < 3; i++) {
       for (var j = 0; j<3; j++) {
-        if(!plansza[i].[j].classList.contains('fg-kolko') &&
-            !plansza[i].[j].classList.contains('fg-krzyzyk'));
+        if(!plansza[i][j].classList.contains('fg-kolko') &&
+            !plansza[i][j].classList.contains('fg-krzyzyk'));
             czyRemis = false;
       }
     }
@@ -85,6 +87,9 @@ function czyKoniecGry(pos_i, pos_j){
   }
 
 function kliknieciePola(e) {
+  if (czyZakonczonaGra) {
+    return;
+  }
     var kliknietePole = e.target;
     var listaKlas = kliknietePole.classList;
     if (listaKlas.contains('fg-krzyzyk')) {
@@ -101,6 +106,12 @@ function kliknieciePola(e) {
         listaKlas.add('fg-kolko');
         kliknietePole.innerText = "O";
         czyRKrz = true;
+    }
+    if (czyKoniecGry(pos_i, pos_j)) {
+      czyZakonczonaGra = true;
+      for (var i = 0; i < 3; i++) {
+        
+      }
     }
     ustawruch();
 }
@@ -123,6 +134,14 @@ function nowagra() {
 
 function ustawruch() {
     document.getElementById('ruch').innerHTML = '<span class="fg-kolko">' + gracz_1 + '</span> vs ' + " " + '<span class="fg-krzyzyk"/>' + gracz_2 + '</span>';
+    if (czyZakonczonaGra) {
+      document.getElementById('ruch').innerHTML += "<br>Koniec gry waaaaaaaaaa wygrał:"+ (czyRKrz ?  gracz_1:gracz_2);
+    }
+    else if (remis) {
+      document.getElementById("ruch").innerHTML +="<br> remis!";
+    }
+
+
     if (czyRKrz == true) {
         document.querySelector('#ruch .fg-krzyzyk').classList.add('podkreslenie')
     } else {
