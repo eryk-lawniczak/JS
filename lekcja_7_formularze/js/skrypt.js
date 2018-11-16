@@ -60,14 +60,14 @@ elPopraw.disabled = false;
   }
 }
 function wyslij(){
-  var divy = document.createElement('div');
-  divy.innerHTML = elImie.value+'<br>'+
-                  elNazwisko.value+'<br>'+
-                  elLogin.value;
-  // while(document.body.firstChild){
-  //   document.body.removeChild(document.body.firstChild);
-  //   document.body.appendChild(divy);
-  // }
+
+  while(document.body.firstChild){
+    document.body.removeChild(document.body.firstChild);
+
+  }
+  document.body.innerHTML = 'Imie: '+elImie.value+'<br>'+
+                            'Nazwisko: '+elNazwisko.value+'<br>'+
+                            'Login: '+elLogin.value;
 }
 
 
