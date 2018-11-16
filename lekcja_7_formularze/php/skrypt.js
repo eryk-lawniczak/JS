@@ -1,79 +1,49 @@
-var elImie=document.getElementById('imie');
-var elNazwisko=document.getElementById('nazwisko');
-var elLogin=document.getElementById('login');
-var elKomunikat=document.getElementById('komunikat');
-var elZatwierdz=document.getElementById('ok');
-var elWyslij=document.getElementById('przycisk');
-var elPopraw=document.getElementById('reset');
+var pesel = document.getElementById('pesel');
+var imie = document.getElementById('imie');
+var nazwisko = document.getElementById('nazwisko');
+var jezyk = document.getElementById('jezyk');
+// var dodaj_przedmiot = document.getElementById('dodaj_przedmiot');
+var wyslij = document.getElementById('przycisk');
+var komunikat = document.getElementById('komunikat');
+var ilosc_przedmiotow =1;
+var czyPoprawne = false;
 
-function sprawdz(){
-  if (this.value.length > 2 && this.value.length < 20) {
-    elKomunikat.textContent = "";
-    elZatwierdz.disabled = false;
 
+function dodaj_p() {
+if(ilosc_przedmiotow<6){
+  var przedmioty = document.getElementsByClassName('przedmioty_r');
+
+  for(var i = 0; i<=ilosc_przedmiotow; i++ ){
+    przedmioty[i].type = 'text';
+  }
+  ilosc_przedmiotow++;
+}else {
+  return;
+}
+}
+function sprawdz_pesel(){
+  if(this.value.length == 11){
+    komunikat.innerHTML = "";
+    czyPoprawne = true;
   }else {
-    elKomunikat.textContent="Błąd danych";
-    this.focus();
-    elZatwierdz.disabled = true;
+    komunikat.innerHTML = "Błędne dane";
+    czyPoprawne = false;
   }
 }
-function zablokuj(){
-  var zablokowane = document.querySelectorAll('input[type=text]')
-  for (var i = 0; i <zablokowane.length; i++) {
-zablokowane[i].disabled = true;
-elWyslij.disabled = false;
-elPopraw.disabled = false;
-  }
-}
-function odblokuj(){
-  var zablokowane = document.querySelectorAll('input[disabled]')
-  if (zablokowane.length>0) {
-    for (var i = 0; i <zablokowane.length; i++) {
-  zablokowane[i].disabled = false;
-}
-elZatwierdz.checked = false;
-elWyslij.disabled = true;
-elPopraw.disabled = true;
-  }
-}
-function zatwierdz(){
-  var inputy = document.querySelectorAll('input[type=text]');
-  var czyPuste = false;
-  var pusty;
-  for(var i = 0; i<inputy.length; i++){
-    if(inputy[i].value =="" && inputy[i]<2 && inputy[i]>20) {
-      czyPuste = true;
-      pusty = input[i];
-    }
-  }
-  if(czyPuste){
-    elPopraw.disabled = true;
-    pusty.autofocus = true;
-    return;
-  }
-  if (!this.checked) {
-elPopraw.disabled = false;
-    odblokuj();
-
+function sprawdz_i_n(){
+  if(this.value.length >= 3 ){
+    komunikat.innerHTML = "";
+czyPoprawne = true;
   }else {
-    zablokuj();
+    komunikat.innerHTML = "Błędne dane";
+czyPoprawne = false;
   }
 }
-function wyslij(){
+function sprawdz_j(){
 
-  while(document.body.firstChild){
-    document.body.removeChild(document.body.firstChild);
-
-  }
-  document.body.innerHTML = 'Imie: '+elImie.value+'<br>'+
-                            'Nazwisko: '+elNazwisko.value+'<br>'+
-                            'Login: '+elLogin.value;
 }
 
-
-elImie.addEventListener('blur', sprawdz);
-elNazwisko.addEventListener('blur', sprawdz);
-elLogin.addEventListener('blur', sprawdz);
-elZatwierdz.addEventListener('change', zatwierdz);
-elPopraw.addEventListener('click', odblokuj);
-elWyslij.addEventListener('click', wyslij);
+pesel.addEventListener('blur', sprawdz_pesel);
+imie.addEventListener('blur', sprawdz_i_n);
+nazwisko.addEventListener('blur', sprawdz_i_n);
+// dodaj_przedmiot.addEventListener('click', dodaj_p);
